@@ -19,6 +19,7 @@
     --color-secondary: #9CA3AF;
     --color-third: #EAE5DA;
     --color-fourth: #8BAF9D;
+    --color-search: #FAFAFA1D;
 
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
@@ -52,23 +53,29 @@
         @apply bg-bright h-[100vh];
     }
 
+    .wrapper {
+        @apply px-4;
+    }
+
+    .line-height-text {
+        @apply leading-7;
+    }
+
     .dark-section {
         @apply bg-secondary text-foreground;
     }
 
     .main-titles {
-        @apply text-[1.625rem];
+        @apply text-[1.75rem];
+    }
+
+    .cards-width {
+        @apply min-w-[9.625em]
     }
 
     .tiles {
         @apply bg-bright rounded-regular px-4 py-3 font-black font-serif;
     }
-
-    .wrapper {
-        @apply px-4;
-    }
-
-
 
 
 }

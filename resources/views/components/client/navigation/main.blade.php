@@ -1,4 +1,4 @@
-<nav class="bg-third h-[3.25rem] w-full px-4 sticky top-0">
+<nav class="bg-third h-[3.25rem] w-full px-4 sticky top-0 z-50">
     <h1 class="hidden bg-third">
         Main Navigation
     </h1>
@@ -47,7 +47,7 @@
                         @if(request()->url() !== $link['url'])
                             <a href="{{ $link['url'] }}" class="font-serif font-black text-3xl">{{ $link['name'] }}</a>
                         @else
-                            <a href="{{ $link['url'] }}" class="font-serif font-black text-3xl text-foreground">
+                            <a href="{{ $link['url'] }}" class="font-serif font-black text-3xl text-foreground underline">
                                 {{ $link['name'] }}
                             </a>
                         @endif

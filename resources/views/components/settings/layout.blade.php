@@ -10,9 +10,14 @@
     <title>Document</title>
 </head>
 <body>
-<x-client.navigation.main/>
+<header class="sticky top-0 z-50">
+    <x-client.navigation.main/>
+</header>
+<main>
+    {{ $slot }}
+</main>
 
-{{ $slot }}
+<x-client.footer/>
 
 </body>
 </html>

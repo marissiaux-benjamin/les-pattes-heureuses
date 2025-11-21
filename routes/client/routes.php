@@ -10,9 +10,9 @@ Route::get('/accueil',
 
 Route::get('/nos-chouchous',
     function () {
-        return view('client.pages.nos-chouchous');
+        return view('client.pages.animals.animals');
     }
-)->name('nos-chouchous');
+)->name('animals');
 
 Route::get('/contact',
     function () {

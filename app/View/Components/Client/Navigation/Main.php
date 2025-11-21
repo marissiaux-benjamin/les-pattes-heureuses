@@ -18,7 +18,7 @@ class Main extends Component
     {
         $this->links = [
             ['name' => 'Accueil', 'url' => route('accueil')],
-            ['name' => 'Nos Chouchous', 'url' => route('nos-chouchous')],
+            ['name' => 'Nos Chouchous', 'url' => route('animals')],
             ['name' => 'Contact', 'url' => route('contact')],
         ];
     }
