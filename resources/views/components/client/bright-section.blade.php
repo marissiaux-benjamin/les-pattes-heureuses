@@ -1,6 +1,6 @@
 @props(['pb'])
 
-<section class="pt-7 {{ $pb }}">
+<section class="pt-7 {{ $pb ?? '' }}">
     <x-client.wrapper>
         {{ $slot }}
     </x-client.wrapper>

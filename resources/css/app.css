@@ -70,11 +70,23 @@
     }
 
     .cards-width {
-        @apply min-w-[9.625em]
+        @apply min-w-[9.625em];
     }
 
     .tiles {
         @apply bg-bright rounded-regular px-4 py-3 font-black font-serif;
+    }
+
+    .display-form-button {
+        @apply bg-[url("/public/assets/svg/chevron-up.svg")] bg-no-repeat bg-right;
+    }
+
+    .no-js {
+
+    }
+
+    .js-enabled {
+
     }
 
 
