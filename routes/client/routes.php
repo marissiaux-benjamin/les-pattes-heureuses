@@ -24,6 +24,12 @@ Route::get('/nos-chouchous/id',
     }
 )->name('animals.show');
 
+Route::post('/nos-chouchous/id/adopted',
+    function () {
+        return view('client.pages.animals.show');
+    }
+)->name('animals.adpoted');
+
 
 // Contact
 Route::get('/contact',

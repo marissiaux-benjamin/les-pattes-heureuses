@@ -81,12 +81,32 @@
         @apply bg-[url("/public/assets/svg/chevron-up.svg")] bg-no-repeat bg-right;
     }
 
-    .no-js {
-
+    .icon-reversed {
+        rotate: 180deg;
     }
 
     .js-enabled {
+        .hidden-form {
+            @apply max-h-0 mb-0;
+            overflow: hidden;
+        }
+    }
 
+    .displayed-form {
+        @apply max-h-[52.531rem] mb-10;
+        overflow: visible;
+    }
+
+    .no-js {
+        .hidden-button {
+            @apply hidden;
+        }
+
+        .displayed-form {
+            position: initial;
+            visibility: visible;
+            height: auto;
+        }
     }
 
 

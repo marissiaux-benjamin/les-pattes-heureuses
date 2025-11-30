@@ -7,9 +7,9 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://use.typekit.net/moi0nby.css">
     @vite(['resources/css/app.css', 'resources/js/app.js'])
-    <title>Document</title>
+    <title>Les Pattes Heureuses</title>
 </head>
-<body>
+<body class="no-js">
 <header class="sticky top-0 z-50">
     <x-client.navigation.main/>
 </header>

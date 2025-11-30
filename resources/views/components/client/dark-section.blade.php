@@ -1,4 +1,4 @@
-@props(['relative', 'height'])
-<section class="dark-section py-7 wrapper {{ $relative??'' }} {{ $height??'' }}">
+@props(['relative', 'height','pt', 'pb'])
+<section class="dark-section {{ $pb ?? '' }} {{ $pt ?? '' }} {{ $relative??'' }} {{ $height??'' }} ">
     {{ $slot }}
 </section>

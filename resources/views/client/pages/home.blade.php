@@ -1,25 +1,31 @@
 <x-settings.layout>
     <div>
-        <x-client.dark-section relative="relative" height="max-h-[60%]">
-            <div class="rounded-xl tiles relative">
-                <h1 class="main-titles text-foreground">
-                    Venez <span class="text-[#8BAF9D]">découvrir</span> le refuge Les Pattes Heureuses&nbsp;!
-                </h1>
+        <x-client.dark-section height="h-fit" relative="relative" pt="pt-7">
+            <div class="wrapper">
+                <div class="rounded-xl tiles relative">
+                    <h1 class="main-titles text-foreground">
+                        Venez <span class="text-[#8BAF9D]">découvrir</span> le refuge Les Pattes Heureuses&nbsp;!
+                    </h1>
+                </div>
+                <svg width="22" height="29" viewBox="0 0 22 29" fill="none" xmlns="http://www.w3.org/2000/svg"
+                     class="ml-[85%]">
+                    <path d="M1.81103 27.9893L22 0H0V27.4042C0 28.3747 1.2433 28.7763 1.81103 27.9893Z" fill="#FAFAFA"/>
+                </svg>
             </div>
-            <svg width="22" height="29" viewBox="0 0 22 29" fill="none" xmlns="http://www.w3.org/2000/svg"
-                 class="ml-[85%]">
-                <path d="M1.81103 27.9893L22 0H0V27.4042C0 28.3747 1.2433 28.7763 1.81103 27.9893Z" fill="#FAFAFA"/>
-            </svg>
-            <img src="{{ asset('/assets/images/animal-home.png') }}"
-                 alt="Une image représentant un chien et un chat côte à côte." title="Un chien et un chat côte à côte."
-                 class="z-20">
+
+            <div class="translate-y-10">
+                <img src="{{ asset('/assets/images/animal-home.png') }}"
+                     alt="Une image représentant un chien et un chat côte à côte."
+                     title="Un chien et un chat côte à côte."
+                     class="m-auto z-20 md:max-w-4/5 md:m-0">
+                <svg viewBox="0 0 375 74" fill="none" xmlns="http://www.w3.org/2000/svg"
+                     class="w-full h-auto min-w-full -translate-y-10 z-10">
+                    <path
+                        d="M281.25 0.345818C326.719 3.44705 362.5 23.0012 375 32.4772V74L0 74V8.09889C14.6484 16.2827 55.1953 26.464 97.8516 26.464C151.172 26.464 224.414 -3.53072 281.25 0.345818Z"
+                        fill="#FAFAFA"/>
+                </svg>
+            </div>
         </x-client.dark-section>
-        <svg width="375" height="74" viewBox="0 0 375 74" fill="none" xmlns="http://www.w3.org/2000/svg"
-             class="absolute min-w-full top-[54%] z-10">
-            <path
-                d="M281.25 0.345818C326.719 3.44705 362.5 23.0012 375 32.4772V74L0 74V8.09889C14.6484 16.2827 55.1953 26.464 97.8516 26.464C151.172 26.464 224.414 -3.53072 281.25 0.345818Z"
-                fill="#FAFAFA"/>
-        </svg>
     </div>
 
     <x-client.bright-section pb="pb-7">
@@ -44,7 +50,7 @@
     </x-client.bright-section>
 
     <div>
-        <x-client.dark-section>
+        <x-client.dark-section pt="pt-7">
             <svg width="15" height="19" viewBox="0 0 15 19" fill="none" xmlns="http://www.w3.org/2000/svg"
                  class="ml-4 translate-0.5">
                 <path d="M13.1863 0.420637L0 18.8814H15V1.00187C15 0.0290349 13.7517 -0.370994 13.1863 0.420637Z"
@@ -84,7 +90,7 @@
 
     </x-client.bright-section>
 
-    <x-client.dark-section relative="relative">
+    <x-client.dark-section relative="relative" pt="pt-8">
         <h1 class="font-serif text-bright main-titles font-black mb-4">
             Notre équipe <span class="text-third">est présente</span> pour vous et pour les animaux&nbsp;!
         </h1>
@@ -93,12 +99,13 @@
         </p>
 
         <div class="flex gap-3 snap-x overflow-scroll mb-6">
-            <x-client.card text="Elise" role="Fondatrice" picture="{{ asset('assets/images/elise.jpg') }}"
-                           alt="Photo d'Elise, la propriétaire du refuge."/>
-            <x-client.card text="Pierre" role="Bénénvole" picture="{{ asset('assets/images/pierre.jpg') }}"
-                           alt="Photo d'Elise, la propriétaire du refuge."/>
-            <x-client.card text="Jaqueline" role="Bénénvole" picture="{{ asset('assets/images/jacqueline.jpg') }}"
-                           alt="Photo d'Elise, la propriétaire du refuge."/>
+            <x-client.cards.staff-card text="Elise" role="Fondatrice" picture="{{ asset('assets/images/elise.jpg') }}"
+                                       alt="Photo d'Elise, la propriétaire du refuge."/>
+            <x-client.cards.staff-card text="Pierre" role="Bénénvole" picture="{{ asset('assets/images/pierre.jpg') }}"
+                                       alt="Photo d'Elise, la propriétaire du refuge."/>
+            <x-client.cards.staff-card text="Jaqueline" role="Bénénvole"
+                                       picture="{{ asset('assets/images/jacqueline.jpg') }}"
+                                       alt="Photo d'Elise, la propriétaire du refuge."/>
         </div>
 
         <x-client.buttons.bright-button text="Nous contacter" route="{{ route('contact') }}"
