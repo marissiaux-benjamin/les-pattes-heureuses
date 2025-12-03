@@ -54,7 +54,7 @@
     }
 
     .wrapper {
-        @apply px-4;
+        @apply px-4 md:px-10;
     }
 
     .line-height-text {

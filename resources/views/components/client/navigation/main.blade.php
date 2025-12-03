@@ -48,10 +48,11 @@
                 @foreach($links as $link)
                     <li class="">
                         @if(request()->url() !== $link['url'])
-                            <a href="{{ $link['url'] }}" class="font-serif font-black text-3xl">{{ $link['name'] }}</a>
+                            <a href="{{ $link['url'] }}"
+                               class="nav-link font-serif font-black text-3xl md:font-normal md:text-base">{{ $link['name'] }}</a>
                         @else
                             <a href="{{ $link['url'] }}"
-                               class="font-serif font-black text-3xl text-foreground underline">
+                               class="nav-link-selected font-serif font-black text-3xl text-foreground md:font-normal md:text-base">
                                 {{ $link['name'] }}
                             </a>
                         @endif

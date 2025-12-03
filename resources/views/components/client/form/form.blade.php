@@ -1,6 +1,6 @@
 @props(['title',])
 
-<x-client.bright-section pb="pb-7">
+<x-client.bright-section pb="pb-7" wrapper="wrapper">
     <h1 class="hidden">
         {{ $title }}
     </h1>

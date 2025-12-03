@@ -1,6 +1,6 @@
 @props(['image', 'name', 'gender', 'age', 'spicies', 'breed', 'mb'])
 
-<article class="w-full bg-third text-center p-5 rounded-xl {{ $mb ?? '' }}">
+<article class="w-full sm:w-2/5 bg-third text-center p-5 rounded-xl {{ $mb ?? '' }}">
     <div class="aspect-square overflow-hidden w-full rounded-xl mb-5">
         <img src="{{ $image }}" alt="Chat gris couché sur un appui de fenêtre."
              class="w-full h-full object-cover">
@@ -30,7 +30,7 @@
         @endif
 
     </div>
-    <div class="flex flex-col gap-6 justify-around mb-7">
+    <div class="flex flex-col gap-4 justify-around mb-7">
         <p class="hidden">
             Sexe&nbsp;: {{ $gender ?? '' }}
         </p>

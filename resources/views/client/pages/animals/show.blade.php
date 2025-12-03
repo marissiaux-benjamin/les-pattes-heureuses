@@ -1,13 +1,13 @@
 <x-settings.layout>
 
-    <x-client.bright-section>
-
-        <article class="mb-6">
+    <x-client.bright-section pb="py-7">
+        <article class="mb-6 wrapper">
+            <x-client.buttons.back-button/>
             <h2 class="hidden">
                 Photo de l'animal
             </h2>
 
-            <div class="flex gap-3 snap-x overflow-scroll mb-6">
+            <div class="flex gap-3 snap-x overflow-scroll mb-6 mt-3">
                 <div class="aspect-square overflow-hidden min-w-[16rem] rounded-xl m-auto snap-center">
                     <img src="{{ asset('assets/images/bono.webp') }}" alt="photo de Bono"
                          class="w-full h-full object-cover">
@@ -23,10 +23,10 @@
             </div>
         </article>
 
-        <h1 class="main-titles font-black font-serif text-fourth mb-4">
+        <h1 class="main-titles wrapper font-black font-serif text-fourth mb-4">
             Bono
         </h1>
-        <div class="mb-7">
+        <div class="mb-7 wrapper">
             <p class="font-sans font-bold text-foreground mb-3">
                 Sexe&nbsp;: <span class="text-fourth font-normal">Mâle</span>
             </p>
@@ -58,7 +58,8 @@
             <a href="#" id="button" title="Afficher le formulaire d'adoption."
                class="flex items-center gap-4 w-fit py-1 px-6 bg-fourth text-bright font-sans font-medium rounded-full transition-all duration-500 ease-in-out hover:bg-foreground">
                 M'adopter
-                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon-reversed transition-all duration-200" id="button-arrow">
+                <svg width="10" height="6" viewBox="0 0 10 6" fill="none" xmlns="http://www.w3.org/2000/svg"
+                     class="icon-reversed transition-all duration-200" id="button-arrow">
                     <path d="M1 5L5 1L9 5" stroke="#FAFAFA" stroke-width="2" stroke-linecap="round"
                           stroke-linejoin="round"/>
                 </svg>
@@ -66,7 +67,8 @@
         </div>
 
         {{-- Mettre un if($adopted) qui va afficher le formulaire ou pas en fonction de si l'animal est adopté ou non. --}}
-        <form action="{{ route('animals.adpoted') }}" id="adoption-form" method="POST" class="displayed-form transition-all duration-300">
+        <form action="{{ route('animals.adpoted') }}" id="adoption-form" method="POST"
+              class="displayed-form transition-all duration-300 wrapper">
 
             @csrf
 
@@ -137,20 +139,23 @@
                 <x-client.form.submit-button value="Envoyer ma demande"/>
             </fieldset>
         </form>
-        <svg width="375" height="74" viewBox="0 0 375 74" fill="none" xmlns="http://www.w3.org/2000/svg"
-             class="-translate-x-4 min-w-full aspect-[375/74]">
-            <path
-                d="M281.25 0.345818C326.719 3.44705 362.5 23.0012 375 32.4772V74L0 74V8.09889C14.6484 16.2827 55.1953 26.464 97.8516 26.464C151.172 26.464 224.414 -3.53072 281.25 0.345818Z"
-                fill="#9CA3AF"/>
-        </svg>
     </x-client.bright-section>
+    <svg width="375" height="74" viewBox="0 0 375 74" fill="none" xmlns="http://www.w3.org/2000/svg"
+         class="w-full h-auto min-w-full z-10">
+        <path
+            d="M281.25 0.345818C326.719 3.44705 362.5 23.0012 375 32.4772V74L0 74V8.09889C14.6484 16.2827 55.1953 26.464 97.8516 26.464C151.172 26.464 224.414 -3.53072 281.25 0.345818Z"
+            fill="#9CA3AF"/>
+    </svg>
 
-    <x-client.dark-section>
+    <x-client.dark-section pb="pb-7" wrapper="wrapper">
         <h1 class="main-titles font-black font-serif text-bright mb-8">
             Les <span class="text-third">autres chats</span> à adopter
         </h1>
 
-        <div class="flex gap-3 snap-x overflow-scroll mb-6">
+        <div class="flex gap-3 snap-x overflow-scroll md:flex md:flex-wrap md:justify-center">
+            <x-client.cards.minimized-animal-card text="Elise" name="Bono" route="{{ route('animals.show') }}"
+                                                  picture="{{ asset('assets/images/bono_2.jpg') }}"
+                                                  alt="Photo d'Elise, la propriétaire du refuge."/>
             <x-client.cards.minimized-animal-card text="Elise" name="Bono" route="{{ route('animals.show') }}"
                                                   picture="{{ asset('assets/images/bono_2.jpg') }}"
                                                   alt="Photo d'Elise, la propriétaire du refuge."/>

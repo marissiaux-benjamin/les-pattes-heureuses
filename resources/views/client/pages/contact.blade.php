@@ -1,5 +1,5 @@
 <x-settings.layout>
-    <x-client.bright-section pb="">
+    <x-client.bright-section wrapper="wrapper">
         <img src="{{ asset('/assets/images/animals-contact.png') }}" alt="animaux couché rassemblés" height="145"
              width="242" class="m-auto mb-5">
         <h1 class="font-serif text main-titles font-black mb-4">
@@ -10,7 +10,7 @@
             bénévole&nbsp;? Remplissez le formulaire pour poser vos
             questions ou pour postuler.
         </p>
-        <hr class="w-full m-auto bg-secondary mt-7">
+        <hr class="w-full m-auto bg-secondary mt-7 mb-7">
     </x-client.bright-section>
 
     <x-client.form.form title="Formulaire de contact"/>

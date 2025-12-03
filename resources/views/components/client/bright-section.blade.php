@@ -1,7 +1,5 @@
-@props(['pb'])
+@props(['pb', 'wrapper', 'media_query'])
 
-<section class="pt-7 {{ $pb ?? '' }}">
-    <x-client.wrapper>
-        {{ $slot }}
-    </x-client.wrapper>
+<section class="{{ $wrapper ?? '' }} {{ $pb ?? '' }} {{ $media_query ?? '' }}">
+    {{ $slot }}
 </section>
