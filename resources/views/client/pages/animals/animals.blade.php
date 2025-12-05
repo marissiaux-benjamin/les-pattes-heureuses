@@ -1,7 +1,7 @@
 <x-settings.layout>
 
-    <x-client.bright-section pb="pt-20" media_query="">
-        <div class="wrapper">
+    <x-client.bright-section pb="pt-20" media_query="lg:pt-30">
+        <div class="wrapper lg:text-center h-[30vh]">
             <h1 class="main-titles font-serif font-black">
                 Faites <span class="text-fourth">connaissance</span> avec nos chouchous&nbsp;!
             </h1>

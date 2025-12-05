@@ -5,6 +5,7 @@
         {{ $title }}
     </h1>
     <form action="#" method="post">
+        @csrf
         <fieldset class="border-2 p-4 rounded-xl">
             <legend class="font-sans px-3">
                 Forumlaire de contact

@@ -1,6 +1,6 @@
 <x-settings.layout>
     <x-client.dark-section height="h-fit" relative="relative" pt="pt-7">
-        <div class="wrapper md:flex md:flex-row-reverse md:items-center">
+        <div class="wrapper md:flex md:flex-row-reverse md:items-center ">
             <div class="min-w-1/2">
                 <div class="rounded-xl tiles relative">
                     <h1 class="main-titles text-foreground">
@@ -35,7 +35,7 @@
             <h1 class="font-serif main-titles text-foreground font-black mb-4">
                 <span class="text-fourth">Bienvenue</span> dans notre refuge&nbsp;!
             </h1>
-            <p class="font-sans line-height-text">
+            <p class="font-sans line-height-text desc-text">
                 Ici, chaque animal trouve une <span class="text-fourth font-medium">seconde chance</span>. Nous
                 accueillons,
                 soignons et aimons nos
@@ -58,12 +58,12 @@
         </div>
     </x-client.bright-section>
 
-    <x-client.dark-section wrapper="wrapper" media_query="md:flex md:flex-row-reverse gap-7" pt="pt-15">
+    <x-client.dark-section wrapper="wrapper" media_query="md:flex md:flex-row-reverse gap-7 md:items-center" pt="pt-15">
         <div class="min-w-1/2">
             <h1 class="main-titles text-bright font-serif font-black">
                 Plus de <span class="text-third">1250</span> animaux Adoptés&nbsp;!
             </h1>
-            <p class="font-sans text-bright line-height-text relative">
+            <p class="font-sans text-bright line-height-text relative desc-text">
                 Depuis la création de notre refuge en 2001, nous avons réussi à loger 1784 animaux ! Nous avons un suivi
                 régulier durant les 6 premiers mois après l’adoption pour voir si tout se passe bien au sein du nouvel
                 environnement.
@@ -82,10 +82,10 @@
 
     <x-client.bright-section wrapper="wrapper" pb="py-15">
 
-        <h1 class="font-serif text-foreground main-titles font-black mb-4">
+        <h1 class="font-serif text-foreground main-titles font-black mb-4 lg:text-center">
             Les animaux sont <span class="text-fourth">chouchoutés</span>&nbsp;!
         </h1>
-        <p class="font-sans text-foreground line-height-text mb-12">
+        <p class="font-sans text-foreground line-height-text mb-12 lg:text-center desc-text">
             Nous avons actuellement <span class="text-fourth font-medium">20 animaux</span> au refuge. Certains sont
             <span
                 class="text-fourth font-medium">déjà adoptés</span> et en attente de leur nouvelle
@@ -100,7 +100,7 @@
         <h1 class="font-serif text-bright main-titles font-black mb-4">
             Notre équipe <span class="text-third">est présente</span> pour vous et pour les animaux&nbsp;!
         </h1>
-        <p class="font-sans text-bright line-height-text mb-4">
+        <p class="font-sans text-bright line-height-text mb-4 desc-text">
             Voici tous les membres de notre équipe dévouée et passionnée par nos amis les animaux.
         </p>
 

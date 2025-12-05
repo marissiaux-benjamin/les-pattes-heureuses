@@ -54,7 +54,7 @@
     }
 
     .wrapper {
-        @apply px-4 md:px-10;
+        @apply px-4 md:px-10 lg:px-36;
     }
 
     .line-height-text {
@@ -66,7 +66,11 @@
     }
 
     .main-titles {
-        @apply text-[1.75rem];
+        @apply text-[1.75rem] lg:text-[3.125rem] lg:leading-14;
+    }
+
+    .desc-text{
+        @apply lg:text-lg;
     }
 
     .cards-width {
