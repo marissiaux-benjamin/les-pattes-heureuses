@@ -14,12 +14,21 @@
     --font-sans: 'source-sans-3', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
     --font-serif: 'roca', ui-serif, serif;
 
+    /*Client colours*/
     --color-foreground: #222222;
     --color-bright: #FAFAFA;
     --color-secondary: #9CA3AF;
     --color-third: #EAE5DA;
     --color-fourth: #8BAF9D;
     --color-search: #FAFAFA1D;
+
+    /*Admin colours*/
+    --color-main-color: #4A5568;
+    --color-secondary-color: #8C929B;
+    --color-background: #F7F7F9;
+    --color-border-color: #E2E2E5;
+    --color-main-text-color: #2D3748;
+    --color-secondary-text: #718096;
 
     --color-accent: var(--color-neutral-800);
     --color-accent-content: var(--color-neutral-800);
@@ -69,7 +78,7 @@
         @apply text-[1.75rem] lg:text-[3.125rem] lg:leading-14;
     }
 
-    .desc-text{
+    .desc-text {
         @apply lg:text-lg;
     }
 

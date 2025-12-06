@@ -12,7 +12,7 @@ Route::get('/', function () {
     return view('client.pages.home');
 })->name('home');
 
-Route::view('dashboard', 'dashboard')
+Route::view('dashboard', 'pages.⚡dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
 

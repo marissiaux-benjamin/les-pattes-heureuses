@@ -16,7 +16,6 @@
 <main>
     {{ $slot }}
 </main>
-
 <x-client.footer/>
 
 </body>
