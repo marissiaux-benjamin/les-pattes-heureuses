@@ -12,6 +12,7 @@ Route::get('/', function () {
     return view('client.pages.home');
 })->name('home');
 
+//admin
 Route::view('dashboard', 'pages.⚡dashboard')
     ->middleware(['auth', 'verified'])
     ->name('dashboard');
@@ -34,4 +35,5 @@ Route::middleware(['auth'])->group(function () {
         )
         ->name('two-factor.show');
 });
-require 'client/routes.php';
+require 'client.php';
+require 'admin.php';
