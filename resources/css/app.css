@@ -21,6 +21,7 @@
     --color-third: #EAE5DA;
     --color-fourth: #8BAF9D;
     --color-search: #FAFAFA1D;
+    --color-error-color: #CB2121;
 
     /*Admin colours*/
     --color-main-color: #4A5568;
@@ -92,6 +93,10 @@
 
     .display-form-button {
         @apply bg-[url("/public/assets/svg/chevron-up.svg")] bg-no-repeat bg-right;
+    }
+
+    .search-icon-background {
+        @apply bg-[url("/public/assets/svg/search-icon.svg")] bg-no-repeat bg-right;
     }
 
     .icon-reversed {

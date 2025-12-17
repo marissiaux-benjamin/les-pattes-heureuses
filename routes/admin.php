@@ -2,28 +2,34 @@
 
 use Illuminate\Support\Facades\Route;
 
-
+// dashboard
 Route::livewire(
     '/dashboard',
     'pages::dashboard')
     ->name('dashboard')
     ->middleware('auth');
 
+Route::livewire('/adoptions/{id}', 'pages::adoption.show')->name('adoption.show')->middleware('auth');
+
+// stats
 Route::livewire('/statistic',
     'pages::statistic.index')
     ->name('statistic.index')
     ->middleware('auth');
 
+// animals
 Route::livewire('/animal',
     'pages::animal.index')
     ->name('animal.index')
     ->middleware('auth');
 
+// member
 Route::livewire('/member',
     'pages::member.index')
     ->name('member.index')
     ->middleware('auth');
 
+// notification
 Route::livewire('/notification',
     'pages::notification.index')
     ->name('notification.index')

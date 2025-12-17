@@ -4,6 +4,7 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 
 class Adoption extends Model
@@ -17,14 +18,14 @@ class Adoption extends Model
         'message_from_application',
     ];
 
-    public function animals(): HasOne
+    public function animal(): BelongsTo
     {
-        return $this->hasOne(Animal::class);
+        return $this->belongsTo(Animal::class);
     }
 
-    public function adopter(): HasOne
+    public function adopter(): BelongsTo
     {
-        return $this->hasOne(Adopter::class);
+        return $this->belongsTo(Adopter::class);
     }
 
 }

@@ -9,6 +9,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasOneThrough;
+use Illuminate\Support\Carbon;
 
 class Animal extends Model
 {
@@ -46,6 +47,11 @@ class Animal extends Model
     public function vaccins(): BelongsToMany
     {
         return $this->belongsToMany(Vaccin::class);
+    }
+
+    public function age(): int
+    {
+        return Carbon::parse($this->attributes['age'])->age;
     }
 
 

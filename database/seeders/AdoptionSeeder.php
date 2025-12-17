@@ -17,12 +17,6 @@ class AdoptionSeeder extends Seeder
      */
     public function run(): void
     {
-        $animals = Animal::all()->count();
-        $adopters = Adopter::all()->count();
-        Adoption::factory(10)->create(
-            [
-                'animal_id' => random_int(0, $animals),
-                'adopter_id' => random_int(0, $adopters),
-            ]);
+        //
     }
 }
