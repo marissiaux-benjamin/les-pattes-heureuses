@@ -39,6 +39,7 @@
             </svg>
         </a>
 
+
         <input type="checkbox" id="checkbox" class="mobile-menu__checkbox">
         <label for="checkbox" class="mobile-menu__btn">
             <div class="mobile-menu__icon rounded-full before:rounded-full after:rounded-full"></div>
@@ -46,7 +47,7 @@
         <div class="mobile-menu__container bg-third">
             <ul class="mobile-menu__list flex flex-col justify-around gap-11">
                 @foreach($links as $link)
-                    <li class="">
+                    <li>
                         @if(request()->url() !== $link['url'])
                             <a href="{{ $link['url'] }}"
                                class="nav-link font-serif font-black text-3xl md:font-normal md:text-base">{{ $link['name'] }}</a>
