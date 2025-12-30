@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Enums\MemberRoles;
 use App\Models\Breed;
 use App\Models\User;
 
@@ -21,8 +22,17 @@ class DatabaseSeeder extends Seeder
         User::factory()->create([
             'name' => 'Ben',
             'email' => 'b@gmail.com',
+            'role' => MemberRoles::Founders->value,
             'password' => '12345678'
         ]);
+
+        User::factory()->create([
+            'name' => 'Clara',
+            'email' => 'clara@gmail.com',
+            'role' => MemberRoles::Volunteers->value,
+            'password' => '12345678'
+        ]);
+
 
         // on fait le seeder de tout en fait ici donc pas besoin de diviser en plein de seeder differents.
 

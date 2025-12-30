@@ -29,6 +29,7 @@ Route::livewire('/member',
     ->name('member.index')
     ->middleware('auth');
 
+
 // notification
 Route::livewire('/notification',
     'pages::notification.index')

@@ -12,9 +12,9 @@ return new class extends Migration {
             $table->string('name');
             $table->timestamp('age');
             $table->string('temper')->nullable();
-            $table->string('coat');
             $table->string('description')->nullable();
             $table->string('vaccin')->nullable();
+            $table->foreignId('coat_id')->constrained();
             $table->foreignId('breed_id')->constrained();
             $table->timestamps('created_at');
         });

@@ -49,6 +49,11 @@ class Animal extends Model
         return $this->belongsToMany(Vaccin::class);
     }
 
+    public function coat(): BelongsTo
+    {
+        return $this->belongsTo(Coat::class);
+    }
+
     public function age(): int
     {
         return Carbon::parse($this->attributes['age'])->age;

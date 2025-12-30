@@ -3,6 +3,7 @@
 namespace Database\Factories;
 
 use App\Models\Animal;
+use App\Models\Coat;
 use Illuminate\Database\Eloquent\Factories\Factory;
 use Illuminate\Support\Str;
 
@@ -19,7 +20,7 @@ class AnimalFactory extends Factory
             'name'=> $this->faker->firstName(),
             'age'=> $this->faker->date(),
             'temper' => $this->faker->text(),
-            'coat'=> $this->faker->word(),
+            'coat_id' => Coat::inRandomOrder()->first()->id ?? $this->faker->word(),
             'description'=> $this->faker->text(),
         ];
     }
