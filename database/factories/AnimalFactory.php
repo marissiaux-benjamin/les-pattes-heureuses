@@ -19,7 +19,6 @@ class AnimalFactory extends Factory
         return [
             'name'=> $this->faker->firstName(),
             'age'=> $this->faker->date(),
-            'temper' => $this->faker->text(),
             'coat_id' => Coat::inRandomOrder()->first()->id ?? $this->faker->word(),
             'description'=> $this->faker->text(),
         ];

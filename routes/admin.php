@@ -18,9 +18,19 @@ Route::livewire('/statistic',
     ->middleware('auth');
 
 // animals
-Route::livewire('/animal',
+Route::livewire('/animal-admin',
     'pages::animal.index')
     ->name('animal.index')
+    ->middleware('auth');
+
+Route::livewire('/animal-admin/{id}',
+    'pages::animal.show')
+    ->name('animal.show')
+    ->middleware('auth');
+
+Route::livewire('/animal-admin/{id}/edit',
+    'pages::animal.edit')
+    ->name('animal.edit')
     ->middleware('auth');
 
 // member
@@ -35,7 +45,5 @@ Route::livewire('/notification',
     'pages::notification.index')
     ->name('notification.index')
     ->middleware('auth');
-
-
 
 

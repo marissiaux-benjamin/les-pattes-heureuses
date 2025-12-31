@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Database\Eloquent\Relations\HasOneThrough;
 use Illuminate\Support\Carbon;
 
@@ -18,10 +17,15 @@ class Animal extends Model
     protected $fillable = [
         'name',
         'age',
-        'temper',
-        'coat',
+        'photo',
+        'coat_id',
+        'specie_id',
+        'breed_id',
         'description',
-        'vaccin',
+    ];
+
+    protected $casts = [
+        'age' => 'date',
     ];
 
     public function adopters(): BelongsToMany

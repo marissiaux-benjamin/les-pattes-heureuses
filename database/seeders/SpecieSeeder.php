@@ -27,7 +27,6 @@ class SpecieSeeder extends Seeder
         Specie::factory(10)
             ->has(Breed::factory(2)
                 ->has(Animal::factory(2)
-
                     ->has(Adoption::factory()
                         ->for(Adopter::factory()))
                 )
