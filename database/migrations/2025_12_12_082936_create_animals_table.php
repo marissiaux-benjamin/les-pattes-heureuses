@@ -10,7 +10,7 @@ return new class extends Migration {
         Schema::create('animals', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->timestamp('age');
+            $table->timestamp('age')->nullable();
             $table->string('photo')->nullable();
             $table->string('description')->nullable();
             $table->string('vaccine')->nullable();

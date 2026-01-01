@@ -15,6 +15,7 @@ class Breed extends Model
     protected $fillable = [
         'name',
         'description',
+        'specie_id'
     ];
 
     public function animals(): HasMany
