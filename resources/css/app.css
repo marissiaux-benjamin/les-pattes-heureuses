@@ -1,0 +1,149 @@
+@import '../scss/styles.css';
+
+@import 'tailwindcss';
+@import '../../vendor/livewire/flux/dist/flux.css';
+
+@source '../views';
+@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
+@source '../../vendor/livewire/flux-pro/stubs/**/*.blade.php';
+@source '../../vendor/livewire/flux/stubs/**/*.blade.php';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+    --font-sans: 'source-sans-3', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-serif: 'roca', ui-serif, serif;
+
+    /*Client colours*/
+    --color-foreground: #222222;
+    --color-bright: #FAFAFA;
+    --color-secondary: #9CA3AF;
+    --color-third: #EAE5DA;
+    --color-fourth: #8BAF9D;
+    --color-search: #FAFAFA1D;
+    --color-error-color: #CB2121;
+
+    /*Admin colours*/
+    --color-main-color: #4A5568;
+    --color-secondary-color: #8C929B;
+    --color-background: #F7F7F9;
+    --color-border-color: #E2E2E5;
+    --color-main-text-color: #2D3748;
+    --color-secondary-text: #718096;
+
+    --color-accent: var(--color-neutral-800);
+    --color-accent-content: var(--color-neutral-800);
+    --color-accent-foreground: var(--color-white);
+
+    --radius-regular: 10px;
+}
+
+@layer theme {
+    .dark {
+        --color-accent: var(--color-white);
+        --color-accent-content: var(--color-white);
+        --color-accent-foreground: var(--color-neutral-800);
+    }
+}
+
+@layer base {
+
+    *,
+    ::after,
+    ::before,
+    ::backdrop,
+    ::file-selector-button {
+        border-color: var(--color-gray-200, currentColor);
+    }
+}
+
+@layer components {
+
+    body {
+        @apply bg-bright h-[100vh];
+    }
+
+    .wrapper {
+        @apply px-4 md:px-10 lg:px-36;
+    }
+
+    .line-height-text {
+        @apply leading-7;
+    }
+
+    .dark-section {
+        @apply bg-secondary text-foreground;
+    }
+
+    .main-titles {
+        @apply text-[1.75rem] lg:text-[3.125rem] lg:leading-14;
+    }
+
+    .desc-text {
+        @apply lg:text-lg;
+    }
+
+    .cards-width {
+        @apply min-w-[9.625em];
+    }
+
+    .tiles {
+        @apply bg-bright rounded-regular px-4 py-3 font-black font-serif;
+    }
+
+    .display-form-button {
+        @apply bg-[url("/public/assets/svg/chevron-up.svg")] bg-no-repeat bg-right;
+    }
+
+    .search-icon-background {
+        @apply bg-[url("/public/assets/svg/search-icon.svg")] bg-no-repeat bg-right;
+    }
+
+    .icon-reversed {
+        rotate: 180deg;
+    }
+
+    .js-enabled {
+        .hidden-form {
+            @apply max-h-0 mb-0;
+            overflow: hidden;
+        }
+    }
+
+    .displayed-form {
+        @apply max-h-[52.531rem] mb-10;
+        overflow: visible;
+    }
+
+    .no-js {
+        .hidden-button {
+            @apply hidden;
+        }
+
+        .displayed-form {
+            position: initial;
+            visibility: visible;
+            height: auto;
+        }
+    }
+
+
+}
+
+[data-flux-field]:not(ui-radio, ui-checkbox) {
+    @apply grid gap-2;
+}
+
+[data-flux-label] {
+    @apply !mb-0 !leading-tight;
+}
+
+input:focus[data-flux-control],
+textarea:focus[data-flux-control],
+select:focus[data-flux-control] {
+    @apply outline-hidden ring-2 ring-accent ring-offset-2 ring-offset-accent-foreground;
+}
+
+/* \[:where(&)\]:size-4 {
+    @apply size-4;
+} */
