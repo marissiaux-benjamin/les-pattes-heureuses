@@ -6,8 +6,7 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-new class extends Component
-{
+new class extends Component {
 
     public $showModal = false;
     public $name;
@@ -22,6 +21,7 @@ new class extends Component
         return \App\Models\Specie::all();
     }
 
+    #[On('open-modify-breed')]
     public function openModifyModal($breedId)
     {
         $breed = Breed::findOrFail($breedId);
