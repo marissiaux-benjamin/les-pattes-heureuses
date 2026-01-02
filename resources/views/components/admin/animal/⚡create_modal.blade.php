@@ -69,7 +69,7 @@ new class extends Component {
 
             $full_path_to_orignal = Storage::putFileAs($path_to_originals, $validated['photo'], $filename);
 
-            $validated['photo.max'] = $filename;
+            $validated['photo'] = $filename;
 
             if ($full_path_to_orignal) {
                 \App\Jobs\ProcessPhoto::dispatch($full_path_to_orignal, $filename);
