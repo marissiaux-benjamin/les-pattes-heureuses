@@ -44,8 +44,9 @@ new class extends Component {
 
     public function update()
     {
-        $animal = \App\Models\Animal::find($this->animal);
-        $this->validate([
+        $animal = \App\Models\Animal::findOrFail($this->animal->id);
+
+        $validated = $this->validate([
             'name' => 'required|string|max:255',
             'age' => 'nullable|date',
             'coat_id' => 'required|exists:coats,id',
@@ -55,13 +56,12 @@ new class extends Component {
             'photo' => 'nullable|image|max:2048',
         ]);
 
-
-        $this->animal->name = $this->name;
-        $this->animal->age = $this->age;
-        $this->animal->coat_id = $this->coat_id;
-        $this->animal->breed_id = $this->breed_id;
-        $this->animal->vaccine = $this->vaccine;
-        $this->animal->description = $this->description;
+        $animal->name = $this->name;
+        $animal->age = $this->age;
+        $animal->coat_id = $this->coat_id;
+        $animal->breed_id = $this->breed_id;
+        $animal->vaccine = $this->vaccine;
+        $animal->description = $this->description;
 
         if ($this->photo) {
             $filename = uniqid() . '.' . config('animalphoto.avatar_file_type');
@@ -73,17 +73,20 @@ new class extends Component {
                 's3'
             );
 
+            if ($animal->photo) {
+                Storage::disk('s3')->delete($animal->photo);
+            }
+
             $animal->photo = $photoPath;
 
             \App\Jobs\ProcessPhoto::dispatch($photoPath, $filename);
         }
 
-        $this->animal->save();
+        $animal->save();
 
-        return $this->redirect(route('animal.show', $this->animal->id));
-
+        return $this->redirect(route('animal.show', $animal->id));
     }
-};
+
 ?>
 
 <div class="min-h-screen flex items-center justify-center">
