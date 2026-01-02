@@ -23,14 +23,21 @@ class DatabaseSeeder extends Seeder
             'name' => 'Ben',
             'email' => 'b@gmail.com',
             'role' => MemberRoles::Founders->value,
-            'password' => '12345678'
+            'password' => '1234567890'
         ]);
 
         User::factory()->create([
-            'name' => 'Clara',
-            'email' => 'clara@gmail.com',
+            'name' => 'Elise',
+            'email' => 'elise@gmail.com',
+            'role' => MemberRoles::Founders->value,
+            'password' => '1234567890'
+        ]);
+
+        User::factory()->create([
+            'name' => 'Thomas',
+            'email' => 'thomas@gmail.com',
             'role' => MemberRoles::Volunteers->value,
-            'password' => '12345678'
+            'password' => '1234567890'
         ]);
 
 
