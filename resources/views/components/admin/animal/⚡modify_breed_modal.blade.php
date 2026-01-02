@@ -6,7 +6,7 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-new class ModifyBreedModal extends Component
+new class extends Component
 {
 
     public $showModal = false;
