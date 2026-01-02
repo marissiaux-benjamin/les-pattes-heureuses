@@ -13,7 +13,7 @@ new class extends Component {
 
     public function search()
     {
-        $orderBy = request('orderby', 'date');
+        $orderBy = request('orderby', 'requested_at');
         $dir = request('dir', 'asc');
 
         return \App\Models\Adoption::where('requested_at', 'like', '%' . $this->word . '%')
@@ -25,7 +25,7 @@ new class extends Component {
     #[Computed]
     public function adoptions()
     {
-        $orderBy = request('orderby', 'date');
+        $orderBy = request('orderby', 'requested_at');
         $dir = request('dir', 'asc');
         return Adoption::with('animal.breed.specie')
             ->where('requested_at', 'like', '%' . $this->word . '%')
