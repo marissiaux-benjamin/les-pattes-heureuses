@@ -64,20 +64,20 @@ new class extends Component {
 
         if ($this->photo) {
             $filename = uniqid() . '.' . config('animalphoto.avatar_file_type');
-
             $path_to_originals = config('animalphoto.originals_path');
+
 
             $full_path_to_original = $this->photo->storeAs(
                 $path_to_originals,
                 $filename,
                 's3'
             );
-            $validated['photo'] = $filename;
+            
+            $validated['photo'] = $full_path_to_original;
 
             if ($full_path_to_original) {
                 \App\Jobs\ProcessPhoto::dispatch($full_path_to_original, $filename);
             }
-
         }
 
         \App\Models\Animal::create($validated);
