@@ -72,7 +72,8 @@ new class extends Component {
                 $filename,
                 'public'
             );
-            $validated['photo'] = $filename;
+
+            $validated['photo'] = $full_path_to_original;
 
             if ($full_path_to_original) {
                 \App\Jobs\ProcessPhoto::dispatch($full_path_to_original, $filename);

@@ -22,10 +22,10 @@ new class extends Component {
     <div class="self-start ml-10 mt-10">
         <x-client.buttons.back-button/>
     </div>
-    <section class="max-w-xl mx-auto bg-white rounded-lg shadow-md p-6">
+    <section class="w-[50%] mx-auto bg-white rounded-lg shadow-md p-6">
         <div class="border-b pb-4 mb-4">
             @if($animal->photo)
-                <img src="{{ Storage::url('storage/' . $animal->photo) }}" alt="{{ $animal->name }}">
+                <img src="{{ Storage::url($animal->photo) }}" alt="{{ $animal->name }}">
             @endif
             <h1 class="text-2xl font-serif font-bold text-fourth">
                 {{ $animal->name }}
