@@ -16,6 +16,7 @@
                 autofocus
                 autocomplete="email"
                 placeholder="email@example.com"
+                class="border border-foreground text-foreground"
             />
 
             <!-- Password -->
@@ -28,10 +29,11 @@
                     autocomplete="current-password"
                     :placeholder="__('Password')"
                     viewable
+                    class="border border-foreground text-foreground"
                 />
 
                 @if (Route::has('password.request'))
-                    <flux:link class="absolute top-0 text-sm end-0" :href="route('password.request')" wire:navigate>
+                    <flux:link class="absolute top-0 text-foreground text-sm end-0" :href="route('password.request')" wire:navigate>
                         {{ __('auth.forgot_password') }}
                     </flux:link>
                 @endif
@@ -41,7 +43,7 @@
             <flux:checkbox class="text-foreground" name="remember" :label="__('auth.remember_password')" :checked="old('remember')"/>
 
             <div class="flex items-center justify-end">
-                <flux:button variant="primary" type="submit" class="w-full outline-0 bg-fourth text-foreground text-fourth hover:text-foreground font-sans font-medium" data-test="login-button">
+                <flux:button variant="primary" type="submit" class="transition-all duration-300 w-full outline-0 bg-fourth text-foreground text-bright hover:text-foreground font-sans font-medium" data-test="login-button">
                     {{ __('auth.connexion_title') }}
                 </flux:button>
             </div>
