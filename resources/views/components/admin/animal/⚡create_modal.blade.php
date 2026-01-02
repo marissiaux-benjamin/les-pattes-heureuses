@@ -75,7 +75,7 @@ new class extends Component {
             $validated['photo'] = $filename;
 
             if ($full_path_to_original) {
-                \App\Jobs\ProcessPhoto::dispatch($full_path_to_orignal, $filename);
+                \App\Jobs\ProcessPhoto::dispatch($full_path_to_original, $filename);
             }
 
         }
