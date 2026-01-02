@@ -38,10 +38,10 @@
             </div>
 
             <!-- Remember Me -->
-            <flux:checkbox name="remember" :label="__('auth.remember_password')" :checked="old('remember')"/>
+            <flux:checkbox class="text-foreground" name="remember" :label="__('auth.remember_password')" :checked="old('remember')"/>
 
             <div class="flex items-center justify-end">
-                <flux:button variant="primary" type="submit" class="w-full outline-0 bg-fourth font-sans" data-test="login-button">
+                <flux:button variant="primary" type="submit" class="w-full outline-0 bg-fourth text-foreground text-fourth hover:text-foreground font-sans font-medium" data-test="login-button">
                     {{ __('auth.connexion_title') }}
                 </flux:button>
             </div>
