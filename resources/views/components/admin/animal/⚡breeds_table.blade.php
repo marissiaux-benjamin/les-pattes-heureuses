@@ -82,7 +82,7 @@ new class extends Component {
                          @click.outside="open = false"
                          class="flex flex-col gap-2 bg-background text-sm rounded-xl shadow-md absolute -left-10 z-10 p-4 mt-2">
                         <button
-                            wire:click="openModifyModal({{ $breed->id }})"
+                            wire:click="$emitTo('admin.animal.modify_breed_modal', 'openModifyModal', {{ $breed->id }})"
                             type="button"
                             class="gap-2 rounded-lg font-sans text-center transition-all duration-200  hover:text-fourth">
                             {{ __('Modifier') }}

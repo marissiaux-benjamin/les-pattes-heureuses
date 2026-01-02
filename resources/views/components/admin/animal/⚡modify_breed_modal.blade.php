@@ -6,13 +6,15 @@ use Livewire\Attributes\On;
 use Livewire\Component;
 use Livewire\WithFileUploads;
 
-new class extends Component {
+new class ModifyBreedModal extends Component
+{
 
     public $showModal = false;
     public $name;
     public $specie_id;
     public $description;
 
+    protected $listeners = ['openModifyModal'];
 
     #[Computed]
     public function species()
@@ -20,35 +22,31 @@ new class extends Component {
         return \App\Models\Specie::all();
     }
 
-    public function openModifyModal($specieId): void
+    public function openModifyModal($breedId)
     {
-        $animal = \App\Models\Animal::find($specieId);
-        $this->animalId = $specieId;
-        $this->name = $animal->name;
-        $this->showConfirmModal = true;
+        $breed = Breed::findOrFail($breedId);
+
+        $this->breedId = $breed->id;
+        $this->name = $breed->name;
+        $this->specie_id = $breed->specie_id;
+        $this->description = $breed->description;
+
+        $this->showModal = true;
     }
 
 
-    public function update(): void
+    public function update()
     {
-        $validated = $this->validate(
-            [
-                'name' => 'required|string|max:255',
-                'description' => 'nullable|string|max:1000',
-                'specie_id' => 'required|exists:species,id'
-            ],
-            [
-                'name.required' => 'Le nom est obligatoire',
-                'specie_id.required' => 'L\'espèce est obligatoire',
-            ]
-        );
+        $validated = $this->validate([
+            'name' => 'required|string|max:255',
+            'specie_id' => 'required|exists:species,id',
+            'description' => 'nullable|string|max:1000',
+        ]);
 
-        \App\Models\Breed::create($validated);
+        Breed::find($this->breedId)->update($validated);
 
-
-        $this->showModal = false;
-        $this->reset(['name', 'specie_id', 'description']);
-        $this->dispatch('breed-created');
+        $this->reset(['showModal', 'breedId', 'name', 'specie_id', 'description']);
+        $this->dispatchBrowserEvent('breed-updated');
     }
 };
 ?>
