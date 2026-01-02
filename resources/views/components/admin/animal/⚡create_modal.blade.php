@@ -67,8 +67,11 @@ new class extends Component {
 
             $path_to_originals = config('animalphoto.originals_path');
 
-            $full_path_to_orignal = $this->photo->putFileAs($path_to_originals, $validated['photo'], $filename, 'public');
-
+            $full_path_to_original = $this->photo->storeAs(
+                $path_to_originals,
+                $filename,
+                'public'
+            );
             $validated['photo'] = $filename;
 
             if ($full_path_to_orignal) {
