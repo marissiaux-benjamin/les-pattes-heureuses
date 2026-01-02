@@ -15,7 +15,7 @@ return new class extends Migration {
             $table->timestamp('requested_at')->nullable();
             $table->timestamp('adopted_at')->nullable();
             $table->text('message_from_application');
-            $table->timestamps('created_at');
+            $table->timestamps();
         });
     }
 

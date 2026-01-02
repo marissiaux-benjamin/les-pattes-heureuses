@@ -12,7 +12,7 @@ return new class extends Migration {
             $table->string('name');
             $table->string('description');
             $table->foreignId('specie_id')->constrained();
-            $table->timestamps('created_at');
+            $table->timestamps();
         });
     }
 
