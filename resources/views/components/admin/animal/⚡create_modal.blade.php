@@ -63,11 +63,21 @@ new class extends Component {
         );
 
         if ($this->photo) {
-            $validated['photo'] = $this->photo->store('animals', 'public');
+            $filename = uniqid() . '.' . config('animalphoto.avatar_file_type');
+
+            $path_to_originals = config('animalphoto.originals_path');
+
+            $full_path_to_orignal = Storage::putFileAs($path_to_originals, $validated['photo'], $filename);
+
+            $validated['photo.max'] = $filename;
+
+            if ($full_path_to_orignal) {
+                \App\Jobs\ProcessPhoto::dispatch($full_path_to_orignal, $filename);
+            }
+
         }
 
         \App\Models\Animal::create($validated);
-
 
         $this->showModal = false;
         $this->reset(['name', 'age', 'coat_id', 'breed_id', 'vaccine', 'adoption', 'description']);
