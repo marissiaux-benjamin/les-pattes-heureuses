@@ -64,11 +64,22 @@ new class extends Component {
         $this->animal->description = $this->description;
 
         if ($this->photo) {
-            $validated['photo'] = $this->photo->store('animals', 'public');
-            $photoPath = $this->photo->store('animals', 'public');
-            $this->animal->photo = $photoPath;
+            $filename = uniqid() . '.' . config('animalphoto.avatar_file_type');
+            $path_to_originals = config('animalphoto.originals_path');
+
+            $photoPath = $this->photo->storeAs(
+                $path_to_originals,
+                $filename,
+                's3'
+            );
+
+            $animal->photo = $photoPath;
+
+            \App\Jobs\ProcessPhoto::dispatch($photoPath, $filename);
         }
+
         $this->animal->save();
+
         return $this->redirect(route('animal.show', $this->animal->id));
 
     }
