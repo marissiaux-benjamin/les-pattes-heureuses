@@ -12,14 +12,6 @@
                     <img src="{{ asset('assets/images/bono.webp') }}" alt="photo de Bono"
                          class="w-full h-full object-cover">
                 </div>
-                <div class="aspect-square overflow-hidden min-w-[16rem] rounded-xl m-auto snap-center">
-                    <img src="{{ asset('assets/images/bono.webp') }}" alt="photo de Bono"
-                         class="w-full h-full object-cover">
-                </div>
-                <div class="aspect-square overflow-hidden min-w-[16rem] rounded-xl m-auto snap-center">
-                    <img src="{{ asset('assets/images/bono.webp') }}" alt="photo de Bono"
-                         class="w-full h-full object-cover">
-                </div>
             </div>
         </article>
 
