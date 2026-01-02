@@ -13,7 +13,7 @@
                 </svg>
             </div>
             <div class="min-w-1/2">
-                <img src="{{ asset('/img/animals-home-no-background.jpg') }}"
+                <img src="{{ asset('assets/images/animals-home.webp') }}"
                      alt="Une image représentant un chien et un chat côte à côte."
                      title="Un chien et un chat côte à côte."
                      class="m-auto w-full md:m-0 ">
