@@ -184,8 +184,8 @@ new class extends Component {
             </div>
 
             <div class="flex flex-col gap-1.5 mb-4">
-                <label for="adotpion">Status&nbsp;<span class="text-error-color">*</span>:</label>
-                <select wire:model="adotpion" name="adotpion" id="adotpion"
+                <label for="adoption">Status&nbsp;<span class="text-error-color">*</span>:</label>
+                <select wire:model="adoption" name="adoption" id="adoption"
                         class="font-sans rounded-md border-2 py-1 px-2 border-secondary text-foreground">
                     <option value="">-&nbsp;Choisir un status&nbsp;-</option>
                     @foreach($this->adoptionStatuses as $adoptionStatus)
