@@ -21,7 +21,7 @@ new class extends Component {
     #[Computed]
     public function breeds()
     {
-        $orderBy = request('orderby', 'specie');
+        $orderBy = request('orderby', 'name');
         $dir = request('dir', 'asc');
 
         return \App\Models\Breed::where('name', 'like', '%' . $this->word . '%')
