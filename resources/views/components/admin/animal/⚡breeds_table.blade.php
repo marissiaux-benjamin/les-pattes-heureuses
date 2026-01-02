@@ -87,7 +87,6 @@ new class extends Component {
                             class="gap-2 rounded-lg font-sans text-center transition-all duration-200  hover:text-fourth">
                             {{ __('Modifier') }}
                         </button>
-                        <livewire:admin.animal.modify_breed_modal/>
 
                         <hr>
                         <button
@@ -110,5 +109,6 @@ new class extends Component {
         </tr>
         </tfoot>
     </table>
+    <livewire:admin.animal.modify_breed_modal/>
 </section>
 

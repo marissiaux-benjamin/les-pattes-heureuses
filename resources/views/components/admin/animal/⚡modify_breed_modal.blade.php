@@ -13,7 +13,6 @@ new class extends Component {
     public $specie_id;
     public $description;
 
-    protected $listeners = ['openModifyModal'];
 
     #[Computed]
     public function species()
@@ -22,12 +21,12 @@ new class extends Component {
     }
 
     #[On('open-modify-breed')]
-    public function openModifyModal($breedId)
+    public function openModifyModal(array $payload)
     {
-        $breed = Breed::findOrFail($breedId);
+        $breed = Breed::findOrFail($payload['id']);
 
-        $this->breedId = $breed->id;
-        $this->name = $breed->name;
+        $this->breedId   = $breed->id;
+        $this->name      = $breed->name;
         $this->specie_id = $breed->specie_id;
         $this->description = $breed->description;
 
