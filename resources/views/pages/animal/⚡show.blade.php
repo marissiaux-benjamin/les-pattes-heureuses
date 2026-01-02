@@ -25,7 +25,7 @@ new class extends Component {
     <section class="w-[50%] mx-auto bg-white rounded-lg shadow-md p-6">
         <div class="border-b pb-4 mb-4">
             @if($animal->photo)
-                <img src="{{ Storage::url(config('animalphoto.originals_path') . '/' . $animal->photo) }}">
+                <img src="{{ Storage::url(config('animalphoto.originals_path') . '/' . $animal->photo) }}" alt="{{ $animal->name }}">
             @endif
             <h1 class="text-2xl font-serif font-bold text-fourth">
                 {{ $animal->name }}
