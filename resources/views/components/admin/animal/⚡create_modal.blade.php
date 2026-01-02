@@ -67,7 +67,7 @@ new class extends Component {
 
             $path_to_originals = config('animalphoto.originals_path');
 
-            $full_path_to_orignal = Storage::putFileAs($path_to_originals, $validated['photo'], $filename);
+            $full_path_to_orignal = $this->photo->putFileAs($path_to_originals, $validated['photo'], $filename, 'public');
 
             $validated['photo'] = $filename;
 
@@ -221,7 +221,6 @@ new class extends Component {
                     @enderror
                 </div>
             </div>
-
 
 
             <div class="flex flex-col gap-1.5 mb-4">
