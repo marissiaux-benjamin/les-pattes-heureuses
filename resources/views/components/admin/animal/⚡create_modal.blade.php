@@ -97,7 +97,7 @@ new class extends Component {
         </svg>
     </button>
     <section wire:show="showModal"
-             class="w-[70%] h-fit fixed top-[15%] left-[15%] z-20 bg-bright text-foreground p-5 rounded-xl">
+             class="w-[70%] h-fit fixed top-[10%] left-[15%] z-20 bg-bright text-foreground p-5 rounded-xl">
         <div class="flex justify-between items-center mb-4">
             <h1 class="text-center font-bold font-sans text-xl">
                 Créez un nouvel animal
