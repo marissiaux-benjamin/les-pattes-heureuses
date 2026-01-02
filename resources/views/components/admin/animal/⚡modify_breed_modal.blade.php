@@ -12,6 +12,7 @@ new class extends Component {
     public $name;
     public $specie_id;
     public $description;
+    public int $breedId;
 
 
     #[Computed]
@@ -25,8 +26,8 @@ new class extends Component {
     {
         $breed = Breed::findOrFail($payload['id']);
 
-        $this->breedId   = $breed->id;
-        $this->name      = $breed->name;
+        $this->breedId = $breed->id;
+        $this->name = $breed->name;
         $this->specie_id = $breed->specie_id;
         $this->description = $breed->description;
 
@@ -56,7 +57,7 @@ new class extends Component {
              class="w-[70%] h-fit fixed top-[30%] left-[15%] z-20 bg-bright text-foreground p-5 rounded-xl">
         <div class="flex justify-between items-center mb-4">
             <h1 class="text-center font-bold font-sans text-xl">
-                {{__('Ajouter une race')}}
+                {{ __('Modifier une race') }}
             </h1>
             <button wire:click="showModal = false" class="cursor-pointer">
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -67,7 +68,7 @@ new class extends Component {
                 </svg>
             </button>
         </div>
-        <form wire:submit="store" method="post">
+        <form wire:submit="update" method="post">
             <div class="flex flex-col gap-1.5 mb-4">
                 <label for="name" class="font-sans">Nom<span class="text-error-color">*</span>&nbsp;:</label>
                 <input type="text" wire:model="name" name="name" id="name" placeholder="Berger Allemand"
