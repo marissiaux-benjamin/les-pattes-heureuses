@@ -13,7 +13,7 @@ return new class extends Migration {
             $table->string('email');
             $table->string('phone');
             $table->string('address');
-            $table->timestamps('created_at');
+            $table->timestamps();
         });
     }
 

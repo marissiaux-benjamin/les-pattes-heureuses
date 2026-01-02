@@ -16,7 +16,7 @@ return new class extends Migration {
             $table->string('vaccine')->nullable();
             $table->foreignId('coat_id')->constrained();
             $table->foreignId('breed_id')->constrained();
-            $table->timestamps('created_at');
+            $table->timestamps();
         });
     }
 
