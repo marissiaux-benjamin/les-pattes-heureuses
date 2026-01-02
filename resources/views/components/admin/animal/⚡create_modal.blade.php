@@ -70,7 +70,7 @@ new class extends Component {
             $full_path_to_original = $this->photo->storeAs(
                 $path_to_originals,
                 $filename,
-                'public'
+                's3'
             );
             $validated['photo'] = $filename;
 
