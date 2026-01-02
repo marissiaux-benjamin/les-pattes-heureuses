@@ -19,4 +19,6 @@ new class extends Component {
         Les animaux
     </h1>
     <livewire:admin.table legend="Liste des animaux"/>
+    <livewire:admin.animal.breeds_table/>
+
 </div>

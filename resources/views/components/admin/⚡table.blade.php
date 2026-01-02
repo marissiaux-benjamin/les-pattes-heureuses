@@ -218,6 +218,4 @@ new class extends Component {
         </div>
     </div>
 
-    <livewire:admin.animal.breeds_table/>
-
 </div>
